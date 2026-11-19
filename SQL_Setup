@@ -1,0 +1,91 @@
+
+
+DROP DATABASE IF EXISTS Year4_Thesis;
+CREATE DATABASE Year4_Thesis;
+USE Year4_Thesis;
+
+create table Student_Login(
+	student_Id VARCHAR(30) PRIMARY KEY,
+	student_password VARCHAR(30)
+);
+
+create table Professor_Login(
+	professor_Id VARCHAR(30) PRIMARY KEY,
+	professor_password VARCHAR(30)
+);
+
+create table Admin_Login(
+	admin_Id VARCHAR(30) PRIMARY KEY,
+	admin_Password VARCHAR(30)
+);
+
+CREATE TABLE Student (
+    student_Id VARCHAR(30) PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    age Int NOT NULL,
+    gender VARCHAR(30),
+    course_id VARCHAR(80) NOT NULL,
+    course_Year INT NOT NULL
+);
+
+create table Course (
+	course_id VARCHAR(30) PRIMARY KEY NOT NULL,
+    classes_number INT NOT NULL,
+    course_Duration INT NOT NULL,
+    credits INT NOT NULL
+);
+
+
+create table Societies (
+	society_name VARCHAR(30),
+    upcoming_event_Society VARCHAR(30),
+    society_head VARCHAR(30)
+);
+create table College_Events(
+	event_Date VARCHAR(30),
+    upcoming_event_Society VARCHAR(30),
+    event_Location VARCHAR(30)
+);
+
+-- Student entries--   
+insert into student values ("A000001", "John","Cloud", 23, "male", "ABCD2", 2);
+insert into student values ("A000002", "Paula","Person", 23, "male", "ABCD1", 3);
+insert into student values ("A000003", "Bear","Happy", 26, "female", "ABCD3", 1);
+insert into student values ("A000004", "Samantha","Real", 23, "female", "SFWR1", 3);
+insert into student values ("A000005", "Sam","Dolan", 18, "male", "ABCD2", 4);
+insert into student values ("A000006", "Harry","Johnston", 23, "male", "CAID1", 1);
+insert into student values ("A000007", "Amelia","Ann", 23, "male", "CAID1", 1);
+
+-- Course entries
+insert into Course values ("ABCD1", 6, 4, 60);
+insert into Course values ("ABCD2", 3, 4, 60);
+insert into Course values ("ABCD3", 3, 3, 60);
+insert into Course values ("CAID1", 3, 4, 60);
+insert into Course values ("SFWR1", 3, 4, 60);
+
+-- Society entries
+insert into Societies values("Archery","None","Bear");
+insert into Societies values("Microbiology","None","Amelia");
+insert into Societies values("Basketball","None","Paula");
+insert into Societies values("trad Music","None","Samantha");
+
+-- Student login additions 
+insert into Student_Login values("A0000001","password1");
+
+-- professor login additions 
+insert into Professor_Login values("T0001","teacherPassword1");
+
+-- admin login additions 
+insert into Admin_Login values("Admin_00001","strongPassword1");
+
+
+-- View Tables
+select * from Course;
+select * from Societies;
+select * from Admin_Login;
+
+
+
+
+
